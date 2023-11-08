@@ -18,11 +18,8 @@ list(APPEND ep
     speex
     libmodplug
     libvpx
-    xvidcore
     game-music-emu
     libpng
-    x264
-    x265
     libdvdcss
     libdvdread
     libdvdnav
@@ -49,7 +46,6 @@ list(APPEND ep
     avisynth-headers
     nvcodec-headers
     libmysofa
-    aom
     xxhash
     dav1d
     libwebp
@@ -78,7 +74,6 @@ list(APPEND ep
     glad
     fast_float
     libdovi
-    rav1e
     libplacebo
     libva
     libzvbi
