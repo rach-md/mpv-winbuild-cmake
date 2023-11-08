@@ -15,7 +15,6 @@ execute_process(COMMAND ${PREFIX_DIR}/src/get_latest_tag.sh
 
 ExternalProject_Add(mpv-release
     DEPENDS
-        angle-headers
         ffmpeg
         fribidi
         lcms2
@@ -29,14 +28,12 @@ ExternalProject_Add(mpv-release
         luajit
         rubberband
         uchardet
-        openal-soft
         mujs
         vulkan
         shaderc
         libplacebo
         spirv-cross
         vapoursynth
-        libsdl2
     URL ${LINK}
     SOURCE_DIR ${SOURCE_LOCATION}
     CONFIGURE_COMMAND ${EXEC} CONF=1 meson <BINARY_DIR> <SOURCE_DIR>
@@ -54,18 +51,15 @@ ExternalProject_Add(mpv-release
         -Dpdf-build=enabled
         -Dlua=enabled
         -Djavascript=enabled
-        -Dsdl2=enabled
         -Dlibarchive=enabled
         -Dlibbluray=enabled
         -Ddvdnav=enabled
         -Duchardet=enabled
         -Drubberband=enabled
         -Dlcms2=enabled
-        -Dopenal=enabled
         -Dspirv-cross=enabled
         -Dvulkan=enabled
         -Dvapoursynth=enabled
-        -Degl-angle=enabled
     BUILD_COMMAND ${EXEC} ninja -C <BINARY_DIR>
     INSTALL_COMMAND ""
     LOG_DOWNLOAD 1 LOG_UPDATE 1 LOG_CONFIGURE 1 LOG_BUILD 1 LOG_INSTALL 1

@@ -40,9 +40,7 @@ list(APPEND ep
     libunibreak
     libass
     libvpl
-    amf-headers
     avisynth-headers
-    nvcodec-headers
     xxhash
     dav1d
     libwebp
@@ -56,7 +54,6 @@ list(APPEND ep
     libjxl
     uavs3d
     davs2
-    angle-headers
     mujs
     spirv-headers
     spirv-tools
