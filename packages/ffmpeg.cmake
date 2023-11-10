@@ -1,12 +1,8 @@
 ExternalProject_Add(ffmpeg
     DEPENDS
         zlib
-        opus
-        speex
-        vorbis
         libxml2
         dav1d
-        fdk-aac
     GIT_REPOSITORY https://github.com/FFmpeg/FFmpeg.git
     SOURCE_DIR ${SOURCE_LOCATION}
     GIT_CLONE_FLAGS "--filter=tree:0"
@@ -20,13 +16,8 @@ ExternalProject_Add(ffmpeg
         --enable-cross-compile
         --enable-runtime-cpudetect
         ${ffmpeg_hardcoded_tables}
-        --enable-nonfree
-        --enable-libopus
-        --enable-libspeex
-        --enable-libvorbis
         --enable-libdav1d
         --enable-libxml2
-        --enable-libfdk-aac
         --disable-doc
         --disable-programs
         --disable-encoders

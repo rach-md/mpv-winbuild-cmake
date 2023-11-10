@@ -5,10 +5,6 @@ list(APPEND ep
     zlib
     libjpeg
     lcms2
-    ogg
-    vorbis
-    opus
-    speex
     libpng
     libiconv
     luajit
@@ -35,7 +31,6 @@ list(APPEND ep
     shaderc
     fast_float
     libplacebo
-    fdk-aac
     ffmpeg
     mpv
     mpv-packaging
