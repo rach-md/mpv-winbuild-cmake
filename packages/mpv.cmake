@@ -11,6 +11,7 @@ ExternalProject_Add(mpv
         libplacebo
         spirv-cross
         libzimg
+        zlib
     GIT_REPOSITORY https://github.com/mpv-player/mpv.git
     SOURCE_DIR ${SOURCE_LOCATION}
     GIT_CLONE_FLAGS "--filter=tree:0"
