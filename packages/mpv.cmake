@@ -10,7 +10,6 @@ ExternalProject_Add(mpv
         shaderc
         libplacebo
         spirv-cross
-        libzimg
         zlib
     GIT_REPOSITORY https://github.com/mpv-player/mpv.git
     SOURCE_DIR ${SOURCE_LOCATION}

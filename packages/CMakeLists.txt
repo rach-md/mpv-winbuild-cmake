@@ -14,8 +14,6 @@ list(APPEND ep
     brotli
     freetype2
     harfbuzz
-    graphengine
-    libzimg
     libunibreak
     libass
     xxhash
