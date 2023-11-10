@@ -20,6 +20,7 @@ ExternalProject_Add(ffmpeg
         --enable-libxml2
         --disable-doc
         --disable-programs
+        --disable-postproc
         --disable-encoders
         --disable-devices
         --disable-filters
