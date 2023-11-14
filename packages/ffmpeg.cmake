@@ -28,6 +28,7 @@ ExternalProject_Add(ffmpeg
         --disable-filters
         --disable-protocols
         --enable-protocol=http,https
+        --disable-demuxer=matroska
         --extra-cflags='-Wno-error=int-conversion'
         "--extra-libs='${ffmpeg_extra_libs}'" # -lstdc++ / -lc++ needs by libjxl and shaderc
     BUILD_COMMAND ${MAKE}
