@@ -25,6 +25,7 @@ ExternalProject_Add(ffmpeg
         --disable-encoders
         --disable-muxers
         --disable-devices
+        --disable-bsfs
         --disable-filters
         --disable-protocols
         --enable-protocol=http,https
