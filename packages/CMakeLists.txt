@@ -1,7 +1,6 @@
 set_property(DIRECTORY PROPERTY EP_STEP_TARGETS download)
 include(${PROJECT_SOURCE_DIR}/cmake/packages_check.cmake)
 list(APPEND ep
-    xz
     uchardet
     zlib
     libjpeg
@@ -15,11 +14,9 @@ list(APPEND ep
     luajit
     fribidi
     expat
-    nettle
     libxml2
     brotli
     freetype2
-    libudfread
     harfbuzz
     graphengine
     libzimg
