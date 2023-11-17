@@ -9,7 +9,6 @@ list(APPEND ep
     libiconv
     luajit
     fribidi
-    expat
     libxml2
     brotli
     freetype2
