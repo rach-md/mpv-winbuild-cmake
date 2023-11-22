@@ -16,7 +16,6 @@ ExternalProject_Add(ffmpeg
         speex
         vorbis
         libxml2
-        libjxl
         shaderc
         libplacebo
         dav1d
@@ -61,7 +60,6 @@ ExternalProject_Add(ffmpeg
         --enable-libzimg
         --enable-openssl
         --enable-libxml2
-        --enable-libjxl
         --enable-libplacebo
         --enable-libshaderc
         --enable-libfdk-aac
@@ -71,7 +69,6 @@ ExternalProject_Add(ffmpeg
         --enable-vaapi
         --disable-vdpau
         --disable-videotoolbox
-        --disable-decoder=libaom_av1
         --extra-cflags='-Wno-error=int-conversion'
         "--extra-libs='${ffmpeg_extra_libs}'" # -lstdc++ / -lc++ needs by libjxl and shaderc
     BUILD_COMMAND ${MAKE}

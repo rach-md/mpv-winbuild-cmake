@@ -42,8 +42,6 @@ list(APPEND ep
     dav1d
     libwebp
     vapoursynth
-    highway
-    libjxl
     mujs
     spirv-headers
     spirv-tools
