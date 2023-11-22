@@ -35,7 +35,6 @@ list(APPEND ep
     xxhash
     dav1d
     libwebp
-    mujs
     spirv-headers
     spirv-tools
     spirv-cross

@@ -9,11 +9,11 @@ ExternalProject_Add(mpv
         libpng
         luajit
         uchardet
-        mujs
         vulkan
         shaderc
         libplacebo
         spirv-cross
+        libzimg
     GIT_REPOSITORY https://github.com/mpv-player/mpv.git
     SOURCE_DIR ${SOURCE_LOCATION}
     GIT_CLONE_FLAGS "--filter=tree:0"
@@ -32,11 +32,10 @@ ExternalProject_Add(mpv
         -Dlibmpv=true
         -Dpdf-build=enabled
         -Dlua=enabled
-        -Djavascript=enabled
         -Duchardet=enabled
         -Dlcms2=enabled
         -Dspirv-cross=enabled
-        -Dvulkan=enabled
+        -Ddirect3d=disabled
     BUILD_COMMAND ${EXEC} ninja -C <BINARY_DIR>
     INSTALL_COMMAND ""
     LOG_DOWNLOAD 1 LOG_UPDATE 1 LOG_CONFIGURE 1 LOG_BUILD 1 LOG_INSTALL 1

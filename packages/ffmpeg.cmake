@@ -2,20 +2,12 @@ ExternalProject_Add(ffmpeg
     DEPENDS
         bzip2
         lame
-        lcms2
-        libass
-        libpng
         libsoxr
         libwebp
-        libzimg
-        fontconfig
-        harfbuzz
         opus
         speex
         vorbis
         libxml2
-        shaderc
-        libplacebo
         dav1d
         fdk-aac
     GIT_REPOSITORY https://github.com/FFmpeg/FFmpeg.git
@@ -31,28 +23,16 @@ ExternalProject_Add(ffmpeg
         --enable-cross-compile
         --enable-runtime-cpudetect
         ${ffmpeg_hardcoded_tables}
-        --enable-gpl
         --enable-version3
         --enable-nonfree
-        --enable-postproc
-        --enable-libass
-        --enable-libfreetype
-        --enable-libfribidi
-        --enable-libfontconfig
-        --enable-libharfbuzz
         --enable-libmp3lame
-        --enable-lcms2
         --enable-libopus
         --enable-libsoxr
         --enable-libspeex
         --enable-libvorbis
         --enable-libwebp
         --enable-libdav1d
-        --enable-libzimg
-        --enable-openssl
         --enable-libxml2
-        --enable-libplacebo
-        --enable-libshaderc
         --enable-libfdk-aac
         --disable-doc
         --disable-ffplay
