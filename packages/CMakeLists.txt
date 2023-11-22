@@ -20,7 +20,6 @@ list(APPEND ep
     fribidi
     expat
     nettle
-    mbedtls
     libxml2
     brotli
     freetype2
@@ -29,7 +28,6 @@ list(APPEND ep
     libsoxr
     graphengine
     libzimg
-    fontconfig
     libunibreak
     libass
     xxhash

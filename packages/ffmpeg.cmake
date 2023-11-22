@@ -1,7 +1,6 @@
 ExternalProject_Add(ffmpeg
     DEPENDS
         bzip2
-        lame
         libsoxr
         libwebp
         opus
@@ -25,7 +24,6 @@ ExternalProject_Add(ffmpeg
         ${ffmpeg_hardcoded_tables}
         --enable-version3
         --enable-nonfree
-        --enable-libmp3lame
         --enable-libopus
         --enable-libsoxr
         --enable-libspeex
@@ -38,6 +36,7 @@ ExternalProject_Add(ffmpeg
         --disable-programs
         --disable-vdpau
         --disable-videotoolbox
+        --disable-encoders
         --extra-cflags='-Wno-error=int-conversion'
         "--extra-libs='${ffmpeg_extra_libs}'" # -lstdc++ / -lc++ needs by libjxl and shaderc
     BUILD_COMMAND ${MAKE}

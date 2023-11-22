@@ -4,7 +4,6 @@ ExternalProject_Add(libass
         freetype2
         fribidi
         libiconv
-        fontconfig
         libunibreak
     GIT_REPOSITORY https://github.com/libass/libass.git
     SOURCE_DIR ${SOURCE_LOCATION}
