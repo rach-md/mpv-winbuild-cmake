@@ -11,14 +11,12 @@ ExternalProject_Add(ffmpeg
         libsrt
         libass
         libbluray
-        libmodplug
         libpng
         libsoxr
         libbs2b
         libvpx
         libwebp
         libzimg
-        libmysofa
         fontconfig
         harfbuzz
         opus
@@ -26,7 +24,6 @@ ExternalProject_Add(ffmpeg
         vorbis
         libxml2
         libvpl
-        libopenmpt
         libjxl
         shaderc
         libplacebo
@@ -64,8 +61,6 @@ ExternalProject_Add(ffmpeg
         --enable-libfribidi
         --enable-libfontconfig
         --enable-libharfbuzz
-        --enable-libmodplug
-        --enable-libopenmpt
         --enable-libmp3lame
         --enable-lcms2
         --enable-libopus
@@ -82,7 +77,6 @@ ExternalProject_Add(ffmpeg
         --enable-libzimg
         --enable-openssl
         --enable-libxml2
-        --enable-libmysofa
         --enable-libssh
         --enable-libsrt
         --enable-libvpl

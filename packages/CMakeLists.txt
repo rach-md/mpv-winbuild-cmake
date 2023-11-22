@@ -16,9 +16,7 @@ list(APPEND ep
     vorbis
     opus
     speex
-    libmodplug
     libvpx
-    game-music-emu
     libpng
     libdvdcss
     libdvdread
@@ -45,7 +43,6 @@ list(APPEND ep
     amf-headers
     avisynth-headers
     nvcodec-headers
-    libmysofa
     xxhash
     dav1d
     libwebp
@@ -69,7 +66,6 @@ list(APPEND ep
     vulkan
     libsdl2
     openal-soft
-    libopenmpt
     shaderc
     glad
     fast_float
