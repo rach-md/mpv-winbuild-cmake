@@ -1,11 +1,9 @@
 ExternalProject_Add(ffmpeg
     DEPENDS
-        avisynth-headers
         bzip2
         lame
         lcms2
         libass
-        libbluray
         libpng
         libsoxr
         libwebp
@@ -19,9 +17,6 @@ ExternalProject_Add(ffmpeg
         shaderc
         libplacebo
         dav1d
-        vapoursynth
-        rubberband
-        libva
         fdk-aac
     GIT_REPOSITORY https://github.com/FFmpeg/FFmpeg.git
     SOURCE_DIR ${SOURCE_LOCATION}
@@ -40,10 +35,7 @@ ExternalProject_Add(ffmpeg
         --enable-version3
         --enable-nonfree
         --enable-postproc
-        --enable-avisynth
-        --enable-vapoursynth
         --enable-libass
-        --enable-libbluray
         --enable-libfreetype
         --enable-libfribidi
         --enable-libfontconfig
@@ -54,7 +46,6 @@ ExternalProject_Add(ffmpeg
         --enable-libsoxr
         --enable-libspeex
         --enable-libvorbis
-        --enable-librubberband
         --enable-libwebp
         --enable-libdav1d
         --enable-libzimg
@@ -66,7 +57,6 @@ ExternalProject_Add(ffmpeg
         --disable-doc
         --disable-ffplay
         --disable-ffprobe
-        --enable-vaapi
         --disable-vdpau
         --disable-videotoolbox
         --extra-cflags='-Wno-error=int-conversion'

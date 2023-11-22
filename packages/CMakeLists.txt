@@ -4,7 +4,6 @@ list(APPEND ep
     xz
     lzo
     uchardet
-    rubberband
     zlib
     zstd
     bzip2
@@ -16,9 +15,6 @@ list(APPEND ep
     opus
     speex
     libpng
-    libdvdcss
-    libdvdread
-    libdvdnav
     libiconv
     luajit
     fribidi
@@ -29,7 +25,6 @@ list(APPEND ep
     brotli
     freetype2
     libudfread
-    libbluray
     harfbuzz
     libsoxr
     graphengine
@@ -37,11 +32,9 @@ list(APPEND ep
     fontconfig
     libunibreak
     libass
-    avisynth-headers
     xxhash
     dav1d
     libwebp
-    vapoursynth
     mujs
     spirv-headers
     spirv-tools
@@ -59,7 +52,6 @@ list(APPEND ep
     fdk-aac
     ffmpeg
     mpv
-    mpv-release
     mpv-packaging
     curl
     flac
