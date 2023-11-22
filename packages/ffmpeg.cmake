@@ -35,8 +35,7 @@ ExternalProject_Add(ffmpeg
         --enable-libxml2
         --enable-libfdk-aac
         --disable-doc
-        --disable-ffplay
-        --disable-ffprobe
+        --disable-programs
         --disable-vdpau
         --disable-videotoolbox
         --extra-cflags='-Wno-error=int-conversion'
