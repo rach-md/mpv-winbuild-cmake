@@ -1,12 +1,10 @@
 ExternalProject_Add(mpv
     DEPENDS
         ffmpeg
-        fribidi
         lcms2
         libass
         libiconv
         libjpeg
-        libpng
         luajit
         uchardet
         vulkan
@@ -30,7 +28,6 @@ ExternalProject_Add(mpv
         -Dlua=enabled
         -Duchardet=enabled
         -Dlcms2=enabled
-        -Dspirv-cross=enabled
         -Ddirect3d=disabled
     BUILD_COMMAND ${EXEC} ninja -C <BINARY_DIR>
     INSTALL_COMMAND ""

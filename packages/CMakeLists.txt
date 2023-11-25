@@ -2,14 +2,10 @@ set_property(DIRECTORY PROPERTY EP_STEP_TARGETS download)
 include(${PROJECT_SOURCE_DIR}/cmake/packages_check.cmake)
 list(APPEND ep
     xz
-    lzo
     uchardet
     zlib
-    zstd
-    bzip2
     libjpeg
     lcms2
-    lame
     ogg
     vorbis
     opus
@@ -31,7 +27,6 @@ list(APPEND ep
     libass
     xxhash
     dav1d
-    libwebp
     spirv-headers
     spirv-tools
     spirv-cross

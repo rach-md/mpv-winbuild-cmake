@@ -1,7 +1,6 @@
 ExternalProject_Add(harfbuzz
     DEPENDS
         freetype2
-        libpng
     GIT_REPOSITORY https://github.com/harfbuzz/harfbuzz.git
     SOURCE_DIR ${SOURCE_LOCATION}
     GIT_REMOTE_NAME origin

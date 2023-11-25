@@ -1,7 +1,6 @@
 ExternalProject_Add(ffmpeg
     DEPENDS
-        bzip2
-        libwebp
+        zlib
         opus
         speex
         vorbis
@@ -21,19 +20,15 @@ ExternalProject_Add(ffmpeg
         --enable-cross-compile
         --enable-runtime-cpudetect
         ${ffmpeg_hardcoded_tables}
-        --enable-version3
         --enable-nonfree
         --enable-libopus
         --enable-libspeex
         --enable-libvorbis
-        --enable-libwebp
         --enable-libdav1d
         --enable-libxml2
         --enable-libfdk-aac
         --disable-doc
         --disable-programs
-        --disable-vdpau
-        --disable-videotoolbox
         --disable-encoders
         --disable-devices
         --disable-filters
