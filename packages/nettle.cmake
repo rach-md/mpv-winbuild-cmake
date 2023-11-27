@@ -1,4 +1,6 @@
 ExternalProject_Add(nettle
+    DEPENDS
+        gmp
     GIT_REPOSITORY https://gitlab.com/shinchiro/nettle.git
     SOURCE_DIR ${SOURCE_LOCATION}
     GIT_CLONE_FLAGS "--filter=tree:0"
