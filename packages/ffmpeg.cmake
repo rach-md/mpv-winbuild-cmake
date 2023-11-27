@@ -4,15 +4,10 @@ ExternalProject_Add(ffmpeg
         bzip2
         lame
         lcms2
-        openssl
-        libssh
-        libsrt
         libass
         libbluray
         libpng
         libsoxr
-        libbs2b
-        libvpx
         libwebp
         libzimg
         fontconfig
@@ -21,16 +16,11 @@ ExternalProject_Add(ffmpeg
         speex
         vorbis
         libxml2
-        libvpl
         libjxl
         shaderc
         libplacebo
-        libzvbi
-        libaribcaption
         dav1d
         vapoursynth
-        uavs3d
-        davs2
         rubberband
         libva
         fdk-aac
@@ -65,24 +55,15 @@ ExternalProject_Add(ffmpeg
         --enable-libsoxr
         --enable-libspeex
         --enable-libvorbis
-        --enable-libbs2b
         --enable-librubberband
-        --enable-libvpx
         --enable-libwebp
         --enable-libdav1d
-        --enable-libdavs2
-        --enable-libuavs3d
         --enable-libzimg
         --enable-openssl
         --enable-libxml2
-        --enable-libssh
-        --enable-libsrt
-        --enable-libvpl
         --enable-libjxl
         --enable-libplacebo
         --enable-libshaderc
-        --enable-libzvbi
-        --enable-libaribcaption
         --enable-libfdk-aac
         --disable-doc
         --disable-ffplay

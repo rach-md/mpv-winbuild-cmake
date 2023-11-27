@@ -1,7 +1,6 @@
 set_property(DIRECTORY PROPERTY EP_STEP_TARGETS download)
 include(${PROJECT_SOURCE_DIR}/cmake/packages_check.cmake)
 list(APPEND ep
-    gmp
     xz
     lzo
     uchardet
@@ -16,7 +15,6 @@ list(APPEND ep
     vorbis
     opus
     speex
-    libvpx
     libpng
     libdvdcss
     libdvdread
@@ -39,21 +37,13 @@ list(APPEND ep
     fontconfig
     libunibreak
     libass
-    libvpl
     avisynth-headers
     xxhash
     dav1d
     libwebp
     vapoursynth
-    libbs2b
-    openssl
-    libssh
-    libsrt
-    libarchive
     highway
     libjxl
-    uavs3d
-    davs2
     mujs
     spirv-headers
     spirv-tools
@@ -68,10 +58,6 @@ list(APPEND ep
     fast_float
     libdovi
     libplacebo
-    libva
-    libzvbi
-    libaribcaption
-    libsixel
     fdk-aac
     ffmpeg
     mpv
