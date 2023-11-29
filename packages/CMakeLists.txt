@@ -23,7 +23,6 @@ list(APPEND ep
     spirv-cross
     glslang
     vulkan-header
-    vulkan
     shaderc
     fast_float
     libplacebo

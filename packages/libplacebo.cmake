@@ -1,7 +1,8 @@
+get_property(src_vulkan-header TARGET vulkan-header PROPERTY _EP_SOURCE_DIR)
 get_property(src_fast_float TARGET fast_float PROPERTY _EP_SOURCE_DIR)
 ExternalProject_Add(libplacebo
     DEPENDS
-        vulkan
+        vulkan-header
         shaderc
         lcms2
         fast_float
@@ -12,6 +13,8 @@ ExternalProject_Add(libplacebo
     GIT_SUBMODULES ""
     UPDATE_COMMAND ""
     CONFIGURE_COMMAND ""
+    COMMAND bash -c "rm -rf <SOURCE_DIR>/3rdparty/Vulkan-Headers"
+    COMMAND bash -c "ln -s ${src_vulkan-header} <SOURCE_DIR>/3rdparty/Vulkan-Headers"
     COMMAND bash -c "rm -rf <SOURCE_DIR>/3rdparty/fast_float"
     COMMAND bash -c "ln -s ${src_fast_float} <SOURCE_DIR>/3rdparty/fast_float"
     COMMAND ${EXEC} CONF=1 meson <BINARY_DIR> <SOURCE_DIR>
@@ -20,7 +23,6 @@ ExternalProject_Add(libplacebo
         --cross-file=${MESON_CROSS}
         --default-library=static
         -Doptimization=3
-        -Dvulkan-registry='${MINGW_INSTALL_PREFIX}/share/vulkan/registry/vk.xml'
         -Ddemos=false
         -Dopengl=disabled
         -Dvulkan=disabled
