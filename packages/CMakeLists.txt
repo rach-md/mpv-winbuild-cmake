@@ -4,7 +4,6 @@ list(APPEND ep
     gmp
     uchardet
     zlib
-    libjpeg
     lcms2
     libpng
     libiconv
