@@ -29,6 +29,7 @@ ExternalProject_Add(ffmpeg
         --disable-devices
         --disable-bsfs
         --disable-filters
+        --enable-filter=aresample,loudnorm
         --disable-protocols
         --enable-protocol=http,https
         --disable-demuxer=matroska
