@@ -36,9 +36,7 @@ list(APPEND ep
     libsdl2
     openal-soft
     shaderc
-    glad
     fast_float
-    libdovi
     libplacebo
     fdk-aac
     ffmpeg

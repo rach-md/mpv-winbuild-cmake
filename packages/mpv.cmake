@@ -7,7 +7,6 @@ ExternalProject_Add(mpv
         libjpeg
         luajit
         uchardet
-        vulkan
         shaderc
         libplacebo
         spirv-cross
@@ -29,6 +28,8 @@ ExternalProject_Add(mpv
         -Duchardet=enabled
         -Dlcms2=enabled
         -Ddirect3d=disabled
+        -Dgl=disabled
+        -Dvulkan=disabled
     BUILD_COMMAND ${EXEC} ninja -C <BINARY_DIR>
     INSTALL_COMMAND ""
     LOG_DOWNLOAD 1 LOG_UPDATE 1 LOG_CONFIGURE 1 LOG_BUILD 1 LOG_INSTALL 1
@@ -46,7 +47,6 @@ ExternalProject_Add_Step(mpv copy-binary
     COMMAND ${CMAKE_COMMAND} -E copy <BINARY_DIR>/mpv.exe                           ${CMAKE_CURRENT_BINARY_DIR}/mpv-package/mpv.exe
     COMMAND ${CMAKE_COMMAND} -E copy <BINARY_DIR>/mpv.com                           ${CMAKE_CURRENT_BINARY_DIR}/mpv-package/mpv.com
     COMMAND ${CMAKE_COMMAND} -E copy <BINARY_DIR>/mpv.pdf                           ${CMAKE_CURRENT_BINARY_DIR}/mpv-package/doc/manual.pdf
-    ${mpv_copy_debug}
     COMMENT "Copying mpv binaries and manual"
 )
 
