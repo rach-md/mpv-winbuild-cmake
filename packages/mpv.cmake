@@ -4,7 +4,6 @@ ExternalProject_Add(mpv
         lcms2
         libass
         libiconv
-        libjpeg
         luajit
         uchardet
         shaderc
