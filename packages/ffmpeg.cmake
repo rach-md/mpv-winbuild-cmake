@@ -22,6 +22,7 @@ ExternalProject_Add(ffmpeg
         --disable-programs
         --disable-postproc
         --disable-encoders
+        --disable-muxers
         --disable-devices
         --disable-filters
         --enable-filter=aresample,loudnorm
