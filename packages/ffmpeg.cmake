@@ -24,10 +24,9 @@ ExternalProject_Add(ffmpeg
         --disable-encoders
         --disable-muxers
         --disable-devices
+        --disable-filters
         --disable-protocols
         --enable-protocol=http,https
-        --disable-filters
-        --enable-filter=aresample,loudnorm
         --extra-cflags='-Wno-error=int-conversion'
         "--extra-libs='${ffmpeg_extra_libs}'" # -lstdc++ / -lc++ needs by libjxl and shaderc
     BUILD_COMMAND ${MAKE}
