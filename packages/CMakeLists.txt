@@ -12,7 +12,6 @@ list(APPEND ep
     fribidi
     nettle
     libxml2
-    brotli
     freetype2
     harfbuzz
     libunibreak
@@ -25,8 +24,6 @@ list(APPEND ep
     glslang
     vulkan-header
     vulkan
-    libsdl2
-    openal-soft
     shaderc
     fast_float
     libplacebo
