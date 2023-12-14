@@ -9,7 +9,6 @@ list(APPEND ep
     mingw-w64-crt
     gendef
     widl
-    rustup
     llvm
     llvm-compiler-rt-builtin
     llvm-libcxx

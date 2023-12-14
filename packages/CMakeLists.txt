@@ -61,10 +61,3 @@ add_custom_target(package-fullclean
     COMMAND ${CMAKE_COMMAND} --build ${CMAKE_BINARY_DIR} --target ${fullclean}
     COMMENT "Remove all stamp files, reset git HEAD"
 )
-
-add_custom_target(cargo-clean
-    COMMAND ${EXEC} cargo install --git https://github.com/matthiaskrgr/cargo-cache.git --no-default-features --features ci-autoclean cargo-cache
-    COMMAND ${EXEC} cargo-cache
-    COMMAND du -sh ${RUSTUP_LOCATION}
-    USES_TERMINAL
-)
