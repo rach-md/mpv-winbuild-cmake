@@ -24,6 +24,7 @@ ExternalProject_Add(mpv
         ${mpv_lto_mode}
         -Dpdf-build=enabled
         -Dlua=enabled
+        -Djpeg=disabled
         -Duchardet=enabled
         -Dlcms2=enabled
         -Ddirect3d=disabled
