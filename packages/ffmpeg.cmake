@@ -24,6 +24,8 @@ ExternalProject_Add(ffmpeg
         --disable-encoders
         --disable-muxers
         --disable-devices
+        --disable-protocols
+        --enable-protocol=http,https
         --disable-filters
         --enable-filter=aresample,loudnorm
         --extra-cflags='-Wno-error=int-conversion'
