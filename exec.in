@@ -2,5 +2,6 @@
 export PATH="@CMAKE_INSTALL_PREFIX@/bin:$PATH"
 export PKG_CONFIG="pkgconf --static"
 export PKG_CONFIG_LIBDIR="@MINGW_INSTALL_PREFIX@/lib/pkgconfig"
+export LD_PRELOAD="@MALLOC@"
 
 eval $*

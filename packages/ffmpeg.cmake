@@ -35,6 +35,7 @@ ExternalProject_Add(ffmpeg
         --disable-demuxer=matroska
         --disable-encoders
         --enable-encoder=mjpeg,png
+        ${ffmpeg_lto}
         --extra-cflags='-Wno-error=int-conversion'
         "--extra-libs='${ffmpeg_extra_libs}'" # -lstdc++ / -lc++ needs by libjxl and shaderc
     BUILD_COMMAND ${MAKE}
