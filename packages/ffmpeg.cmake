@@ -28,6 +28,9 @@ ExternalProject_Add(ffmpeg
         --disable-muxers
         --disable-devices
         --disable-bsfs
+        --disable-mediafoundation
+        --disable-cuda-llvm
+        --disable-d3d12va
         --disable-filters
         --enable-filter=aresample,loudnorm
         --disable-protocols
