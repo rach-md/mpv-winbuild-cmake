@@ -3,7 +3,6 @@ ExternalProject_Add(ffmpeg
         zlib
         libxml2
         dav1d
-        gnutls
     GIT_REPOSITORY https://github.com/FFmpeg/FFmpeg.git
     SOURCE_DIR ${SOURCE_LOCATION}
     GIT_CLONE_FLAGS "--filter=tree:0"
@@ -19,7 +18,7 @@ ExternalProject_Add(ffmpeg
         ${ffmpeg_hardcoded_tables}
         --enable-libdav1d
         --enable-libxml2
-        --enable-gnutls
+        --enable-schannel
         --disable-iconv
         --disable-doc
         --disable-programs

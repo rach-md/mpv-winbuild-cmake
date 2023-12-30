@@ -1,7 +1,6 @@
 set_property(DIRECTORY PROPERTY EP_STEP_TARGETS download)
 include(${PROJECT_SOURCE_DIR}/cmake/packages_check.cmake)
 list(APPEND ep
-    gmp
     uchardet
     zlib
     lcms2
@@ -9,7 +8,6 @@ list(APPEND ep
     libiconv
     luajit
     fribidi
-    nettle
     libxml2
     freetype2
     harfbuzz
@@ -25,7 +23,6 @@ list(APPEND ep
     shaderc
     fast_float
     libplacebo
-    gnutls
     ffmpeg
     mpv
     mpv-packaging
