@@ -3,6 +3,7 @@ ExternalProject_Add(ffmpeg
         zlib
         libxml2
         dav1d
+        gnutls
         ${mimalloc}
     GIT_REPOSITORY https://github.com/FFmpeg/FFmpeg.git
     SOURCE_DIR ${SOURCE_LOCATION}
@@ -20,6 +21,7 @@ ExternalProject_Add(ffmpeg
         ${ffmpeg_hardcoded_tables}
         --enable-libdav1d
         --enable-libxml2
+        --enable-gnutls
         --disable-iconv
         --disable-doc
         --disable-programs
