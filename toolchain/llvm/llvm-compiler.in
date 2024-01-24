@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 PROG=@CMAKE_INSTALL_PREFIX@/bin/@clang_compiler@
 TARGET=@TARGET_ARCH@
 FLAGS="$FLAGS -target $TARGET -march=@GCC_ARCH@ -mtune=@M_TUNE@"
@@ -7,9 +7,9 @@ FLAGS="$FLAGS -fuse-ld=lld --ld-path=@TARGET_ARCH@-ld"
 FLAGS="$FLAGS @cfi@ @opt@"
 FLAGS="$FLAGS -Wno-unused-command-line-argument"
 
-if [ "$LTO" != "0" ] && [ "@CLANG_PACKAGES_LTO@" = "ON" ]; then
+if [ "$LTO" != "0" ] && [ "@CLANG_PACKAGES_LTO@" == "ON" ]; then
     LTO_FLAGS="-flto=thin"
-    if [ "@LLD_LTO_ALL_THREADS@" = "ON" ] && [ "$LTO_JOB" != "1" ]; then
+    if [ "@LLD_LTO_ALL_THREADS@" == "ON" ] && [ "$LTO_JOB" != "1" ]; then
         LTO_FLAGS="$LTO_FLAGS -flto-jobs=@CPU_COUNT@"
     fi
 fi
