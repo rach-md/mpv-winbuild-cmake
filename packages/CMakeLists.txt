@@ -1,7 +1,6 @@
 set_property(DIRECTORY PROPERTY EP_STEP_TARGETS download)
 include(${PROJECT_SOURCE_DIR}/cmake/packages_check.cmake)
 list(APPEND ep
-    mimalloc
     gmp
     uchardet
     zlib

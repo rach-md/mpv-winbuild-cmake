@@ -11,7 +11,6 @@ elseif(COMPILER_TOOLCHAIN STREQUAL "clang")
     set(vapoursynth_manual_install_copy_lib COMMAND ${CMAKE_COMMAND} -E copy <SOURCE_DIR>/VSScript.lib ${MINGW_INSTALL_PREFIX}/lib/VSScript.lib
                                             COMMAND ${CMAKE_COMMAND} -E copy <SOURCE_DIR>/VapourSynth.lib ${MINGW_INSTALL_PREFIX}/lib/VapourSynth.lib)
     set(ffmpeg_extra_libs "-lc++")
-    set(mimalloc "mimalloc")
     set(mpv_lto_mode "-Db_lto_mode=thin")
     if(CLANG_PACKAGES_LTO)
         set(ffmpeg_lto "--enable-lto=thin")
