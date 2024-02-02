@@ -19,7 +19,6 @@ ExternalProject_Add(ffmpeg
         ${ffmpeg_hardcoded_tables}
         --enable-libdav1d
         --enable-libxml2
-        --enable-schannel
         --disable-iconv
         --disable-doc
         --disable-programs
@@ -32,15 +31,12 @@ ExternalProject_Add(ffmpeg
         --disable-cuda-llvm
         --disable-d3d12va
         --disable-filters
-        --enable-filter=aresample,loudnorm
         --disable-protocols
         --enable-protocol=http,https
-        --disable-demuxer=matroska
         --disable-encoders
         --enable-encoder=mjpeg,png
         ${ffmpeg_lto}
         --extra-cflags='-Wno-error=int-conversion'
-        "--extra-libs='${ffmpeg_extra_libs}'" # -lstdc++ / -lc++ needs by libjxl and shaderc
     BUILD_COMMAND ${MAKE} MIMALLOC=1
     INSTALL_COMMAND ${MAKE} install
     LOG_DOWNLOAD 1 LOG_UPDATE 1 LOG_CONFIGURE 1 LOG_BUILD 1 LOG_INSTALL 1
