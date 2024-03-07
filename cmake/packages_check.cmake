@@ -1,5 +1,7 @@
 if(COMPILER_TOOLCHAIN STREQUAL "gcc")
     set(ffmpeg_extra_libs "-lstdc++")
+    set(mpv_strip_binary  COMMAND ${EXEC} ${TARGET_ARCH}-strip -s <BINARY_DIR>/mpv.exe
+                          COMMAND ${EXEC} ${TARGET_ARCH}-strip -s <BINARY_DIR>/mpv.com)
 elseif(COMPILER_TOOLCHAIN STREQUAL "clang")
     set(ffmpeg_extra_libs "-lc++")
     set(mpv_lto_mode "-Db_lto_mode=thin")

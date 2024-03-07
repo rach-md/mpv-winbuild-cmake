@@ -37,8 +37,7 @@ ExternalProject_Add(mpv
 
 ExternalProject_Add_Step(mpv strip-binary
     DEPENDEES build
-    COMMAND ${EXEC} ${TARGET_ARCH}-strip -s <BINARY_DIR>/mpv.exe
-    COMMAND ${EXEC} ${TARGET_ARCH}-strip -s <BINARY_DIR>/mpv.com
+    ${mpv_strip_binary}
     COMMENT "Stripping mpv binaries"
 )
 
