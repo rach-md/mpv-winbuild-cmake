@@ -10,7 +10,7 @@ if [ "$CONF" == "1" ]; then
 else
     FLAGS="$FLAGS -O3 --lto-O3 --lto-CGO3 -s -Xlink=-release"
     if [ "$GC" != "0" ]; then
-        LLD_GC="--gc-sections --icf=safe"
+        LLD_GC="--gc-sections --icf=all"
     fi
     if [ "$PDB" == "1" ]; then
         FLAGS="$FLAGS --pdb="
