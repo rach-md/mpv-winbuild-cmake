@@ -12,6 +12,7 @@ ExternalProject_Add(nettle
         --disable-shared
         --disable-openssl
         --disable-documentation
+        --enable-fat
     BUILD_COMMAND ${MAKE}
     INSTALL_COMMAND ${MAKE} install
     BUILD_IN_SOURCE 1
