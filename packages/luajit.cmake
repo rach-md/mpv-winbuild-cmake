@@ -29,11 +29,11 @@ configure_file(${CMAKE_CURRENT_SOURCE_DIR}/luajit.pc.in ${CMAKE_CURRENT_BINARY_D
 ExternalProject_Add(luajit
     DEPENDS
         libiconv
-    GIT_REPOSITORY https://github.com/LuaJIT/LuaJIT.git
+    GIT_REPOSITORY https://github.com/openresty/luajit2.git
     SOURCE_DIR ${SOURCE_LOCATION}
     GIT_CLONE_FLAGS "--filter=tree:0"
     GIT_REMOTE_NAME origin
-    GIT_TAG v2.1
+    GIT_TAG v2.1-agentzh
     PATCH_COMMAND ${EXEC} git am --3way ${CMAKE_CURRENT_SOURCE_DIR}/luajit-*.patch
     UPDATE_COMMAND ""
     CONFIGURE_COMMAND ""

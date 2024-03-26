@@ -1,4 +1,4 @@
-From a2cc115985feb2de574c2cdd9a7305e532b93079 Mon Sep 17 00:00:00 2001
+From c92ec4586cb91e430aa2c9d7894cf0128a729633 Mon Sep 17 00:00:00 2001
 From: shinchiro <shinchiro@users.noreply.github.com>
 Date: Tue, 25 Jul 2023 22:53:21 +0800
 Subject: [PATCH] Add win32 UTF-8 filesystem functions
@@ -23,20 +23,20 @@ Taken from https://github.com/wm4/libinsanity
  create mode 100644 src/lj_fs_io_replace.h
 
 diff --git a/src/Makefile b/src/Makefile
-index 224d21e7..1e3a0314 100644
+index 68a9a7c..26137e4 100644
 --- a/src/Makefile
 +++ b/src/Makefile
-@@ -512,7 +512,7 @@ LJCORE_O= lj_assert.o lj_gc.o lj_err.o lj_char.o lj_bc.o lj_obj.o lj_buf.o \
+@@ -513,7 +513,7 @@ LJCORE_O= lj_assert.o lj_gc.o lj_err.o lj_char.o lj_bc.o lj_obj.o lj_buf.o \
  	  lj_asm.o lj_trace.o lj_gdbjit.o \
  	  lj_ctype.o lj_cdata.o lj_cconv.o lj_ccall.o lj_ccallback.o \
  	  lj_carith.o lj_clib.o lj_cparse.o \
 -	  lj_lib.o lj_alloc.o lib_aux.o \
 +	  lj_lib.o lj_alloc.o lj_fs_io.o lib_aux.o \
- 	  $(LJLIB_O) lib_init.o
+ 	  $(LJLIB_O) lib_init.o lj_str_hash.o
  
- LJVMCORE_O= $(LJVM_O) $(LJCORE_O)
+ ifeq (x64,$(TARGET_LJARCH))
 diff --git a/src/Makefile.dep b/src/Makefile.dep
-index fda77c83..c34071dc 100644
+index 400ef8b..5f26250 100644
 --- a/src/Makefile.dep
 +++ b/src/Makefile.dep
 @@ -47,6 +47,7 @@ lib_table.o: lib_table.c lua.h luaconf.h lauxlib.h lualib.h lj_obj.h \
@@ -57,7 +57,7 @@ index fda77c83..c34071dc 100644
   lib_io.c lib_os.c lib_package.c lib_debug.c lib_bit.c lib_jit.c \
   lib_ffi.c lib_buffer.c lib_init.c
 diff --git a/src/lib_io.c b/src/lib_io.c
-index a13d4315..757777de 100644
+index c22faa2..3014b06 100644
 --- a/src/lib_io.c
 +++ b/src/lib_io.c
 @@ -25,6 +25,7 @@
@@ -69,7 +69,7 @@ index a13d4315..757777de 100644
  /* Userdata payload for I/O file. */
  typedef struct IOFileUD {
 diff --git a/src/lib_os.c b/src/lib_os.c
-index cf0df281..3f96cbed 100644
+index 4b4e150..0515579 100644
 --- a/src/lib_os.c
 +++ b/src/lib_os.c
 @@ -22,6 +22,7 @@
@@ -81,7 +81,7 @@ index cf0df281..3f96cbed 100644
  #if LJ_TARGET_POSIX
  #include <unistd.h>
 diff --git a/src/lib_package.c b/src/lib_package.c
-index 7e24afa5..9f605014 100644
+index 63a9121..70fdc53 100644
 --- a/src/lib_package.c
 +++ b/src/lib_package.c
 @@ -16,6 +16,7 @@
@@ -93,7 +93,7 @@ index 7e24afa5..9f605014 100644
  /* ------------------------------------------------------------------------ */
  
 diff --git a/src/lj_clib.c b/src/lj_clib.c
-index 513528ce..5b619ec4 100644
+index f0ef6ed..8b22824 100644
 --- a/src/lj_clib.c
 +++ b/src/lj_clib.c
 @@ -17,6 +17,7 @@
@@ -106,7 +106,7 @@ index 513528ce..5b619ec4 100644
  
 diff --git a/src/lj_fs_io.c b/src/lj_fs_io.c
 new file mode 100644
-index 00000000..80668b78
+index 0000000..80668b7
 --- /dev/null
 +++ b/src/lj_fs_io.c
 @@ -0,0 +1,582 @@
@@ -694,7 +694,7 @@ index 00000000..80668b78
 +#endif
 diff --git a/src/lj_fs_io.h b/src/lj_fs_io.h
 new file mode 100644
-index 00000000..0bdcd207
+index 0000000..0bdcd20
 --- /dev/null
 +++ b/src/lj_fs_io.h
 @@ -0,0 +1,60 @@
@@ -760,7 +760,7 @@ index 00000000..0bdcd207
 +#endif
 diff --git a/src/lj_fs_io_replace.h b/src/lj_fs_io_replace.h
 new file mode 100644
-index 00000000..604e279f
+index 0000000..604e279
 --- /dev/null
 +++ b/src/lj_fs_io_replace.h
 @@ -0,0 +1,50 @@
@@ -815,7 +815,7 @@ index 00000000..604e279f
 +
 +#endif
 diff --git a/src/lj_load.c b/src/lj_load.c
-index 152ef6da..1dec7506 100644
+index 0aab488..150be4e 100644
 --- a/src/lj_load.c
 +++ b/src/lj_load.c
 @@ -22,6 +22,7 @@
@@ -827,7 +827,7 @@ index 152ef6da..1dec7506 100644
  /* -- Load Lua source code and bytecode ----------------------------------- */
  
 diff --git a/src/lj_trace.c b/src/lj_trace.c
-index a5e316e1..e8f2bbcd 100644
+index f816337..f15c4c7 100644
 --- a/src/lj_trace.c
 +++ b/src/lj_trace.c
 @@ -31,6 +31,7 @@
@@ -839,7 +839,7 @@ index a5e316e1..e8f2bbcd 100644
  /* -- Error handling ------------------------------------------------------ */
  
 diff --git a/src/ljamalg.c b/src/ljamalg.c
-index f1dce6a3..e0d76b43 100644
+index 4d85950..68fb34b 100644
 --- a/src/ljamalg.c
 +++ b/src/ljamalg.c
 @@ -18,6 +18,7 @@
@@ -851,5 +851,5 @@ index f1dce6a3..e0d76b43 100644
  #include "lj_gc.c"
  #include "lj_err.c"
 -- 
-2.43.0
+2.41.0
 
