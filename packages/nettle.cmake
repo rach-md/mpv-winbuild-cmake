@@ -1,7 +1,7 @@
 ExternalProject_Add(nettle
     DEPENDS
         gmp
-    GIT_REPOSITORY https://gitlab.com/shinchiro/nettle.git
+    GIT_REPOSITORY https://git.lysator.liu.se/nettle/nettle.git
     SOURCE_DIR ${SOURCE_LOCATION}
     GIT_CLONE_FLAGS "--filter=tree:0"
     PATCH_COMMAND ${EXEC} git am --3way ${CMAKE_CURRENT_SOURCE_DIR}/nettle-*.patch
