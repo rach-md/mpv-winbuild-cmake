@@ -3,6 +3,7 @@ ExternalProject_Add(ffmpeg
         zlib
         libxml2
         dav1d
+        gmp
         gnutls
         ${mimalloc}
     GIT_REPOSITORY https://github.com/FFmpeg/FFmpeg.git
@@ -21,21 +22,24 @@ ExternalProject_Add(ffmpeg
         ${ffmpeg_hardcoded_tables}
         --enable-libdav1d
         --enable-libxml2
+        --enable-gmp
         --enable-gnutls
+        --enable-version3
         --disable-iconv
         --disable-doc
         --disable-programs
         --disable-debug
         --disable-postproc
         --disable-muxers
+        --enable-muxer=spdif
+        --disable-demuxer=matroska
         --disable-devices
         --disable-bsfs
         --disable-mediafoundation
         --disable-cuda-llvm
         --disable-d3d12va
         --disable-filters
-        --disable-protocols
-        --enable-protocol=http,https
+        --enable-filter=aresample,dynaudnorm,bwdif
         --disable-encoders
         --enable-encoder=mjpeg,png
         ${ffmpeg_lto}
