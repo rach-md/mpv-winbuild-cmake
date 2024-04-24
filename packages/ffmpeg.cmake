@@ -19,7 +19,6 @@ ExternalProject_Add(ffmpeg
         --pkg-config-flags=--static
         --enable-cross-compile
         --enable-runtime-cpudetect
-        ${ffmpeg_hardcoded_tables}
         --enable-libdav1d
         --enable-libxml2
         --enable-gmp
