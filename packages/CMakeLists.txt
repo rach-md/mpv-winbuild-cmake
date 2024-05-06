@@ -14,6 +14,7 @@ list(APPEND ep
     libxml2
     freetype2
     harfbuzz
+    libsoxr
     libunibreak
     libass
     xxhash

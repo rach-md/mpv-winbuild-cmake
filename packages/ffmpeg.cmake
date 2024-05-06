@@ -5,6 +5,7 @@ ExternalProject_Add(ffmpeg
         dav1d
         gmp
         gnutls
+        libsoxr
         ${mimalloc}
     GIT_REPOSITORY https://github.com/FFmpeg/FFmpeg.git
     SOURCE_DIR ${SOURCE_LOCATION}
@@ -23,6 +24,7 @@ ExternalProject_Add(ffmpeg
         --enable-libxml2
         --enable-gmp
         --enable-gnutls
+        --enable-libsoxr
         --enable-version3
         --disable-iconv
         --disable-doc
