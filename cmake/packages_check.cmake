@@ -1,20 +1,10 @@
 if(COMPILER_TOOLCHAIN STREQUAL "gcc")
-    set(vapoursynth_pkgconfig_libs "-lvapoursynth")
-    set(vapoursynth_script_pkgconfig_libs "-lvsscript")
-    set(vapoursynth_manual_install_copy_lib COMMAND ${CMAKE_COMMAND} -E copy <SOURCE_DIR>/libvsscript.a ${MINGW_INSTALL_PREFIX}/lib/libvsscript.a
-                                            COMMAND ${CMAKE_COMMAND} -E copy <SOURCE_DIR>/libvapoursynth.a ${MINGW_INSTALL_PREFIX}/lib/libvapoursynth.a)
     set(ffmpeg_extra_libs "-lstdc++")
-    set(libjxl_unaligned_vector "-Wa,-muse-unaligned-vector-move") # fix crash on AVX2 proc (64bit) due to unaligned stack memory
 elseif(COMPILER_TOOLCHAIN STREQUAL "clang")
-    set(vapoursynth_pkgconfig_libs "-lVapourSynth -Wl,-delayload=VapourSynth.dll")
-    set(vapoursynth_script_pkgconfig_libs "-lVSScript -Wl,-delayload=VSScript.dll")
-    set(vapoursynth_manual_install_copy_lib COMMAND ${CMAKE_COMMAND} -E copy <SOURCE_DIR>/VSScript.lib ${MINGW_INSTALL_PREFIX}/lib/VSScript.lib
-                                            COMMAND ${CMAKE_COMMAND} -E copy <SOURCE_DIR>/VapourSynth.lib ${MINGW_INSTALL_PREFIX}/lib/VapourSynth.lib)
     set(ffmpeg_extra_libs "-lc++")
     set(mpv_lto_mode "-Db_lto_mode=thin")
     if(CLANG_PACKAGES_LTO)
         set(ffmpeg_lto "--enable-lto=thin")
-        set(x264_lto "--enable-lto")
         if(GCC_ARCH_HAS_AVX)
             set(zlib_lto "-DFNO_LTO_AVAILABLE=OFF")
             # prevent zlib-ng from adding -fno-lto
