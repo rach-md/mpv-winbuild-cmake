@@ -29,7 +29,6 @@ list(APPEND ep
     gnutls
     ffmpeg
     mpv
-    mpv-packaging
 )
 foreach(package IN LISTS ep)
     if(NOT ${SINGLE_SOURCE_LOCATION} STREQUAL "")
