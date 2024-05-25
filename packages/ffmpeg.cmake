@@ -42,6 +42,7 @@ ExternalProject_Add(ffmpeg
         --enable-filter=aresample,dynaudnorm,bwdif
         --disable-encoders
         --enable-encoder=mjpeg,png
+        --disable-decoder=aac_fixed,ac3_fixed,mp1,mp2,mp3,mp3adu,mp3on4
         ${ffmpeg_lto}
         --extra-cflags='-Wno-error=int-conversion'
     BUILD_COMMAND ${MAKE}
