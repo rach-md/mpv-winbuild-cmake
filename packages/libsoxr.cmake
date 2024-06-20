@@ -1,5 +1,5 @@
 ExternalProject_Add(libsoxr
-    GIT_REPOSITORY https://gitlab.com/shinchiro/soxr.git
+    GIT_REPOSITORY https://git.code.sf.net/p/soxr/code
     SOURCE_DIR ${SOURCE_LOCATION}
     UPDATE_COMMAND ""
     GIT_CLONE_FLAGS "--filter=tree:0"
