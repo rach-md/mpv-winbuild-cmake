@@ -34,7 +34,6 @@ ExternalProject_Add(gnutls
         --disable-srp-authentication
         --disable-psk-authentication
         --disable-dhe
-        --disable-ecdhe
         --disable-gost
         --disable-anon-authentication
         --disable-heartbeat-support
