@@ -1,4 +1,4 @@
-set(clang_version "18")
+set(clang_version "19")
 ExternalProject_Add(llvm
     GIT_REPOSITORY https://github.com/llvm/llvm-project.git
     SOURCE_DIR ${SOURCE_LOCATION}
@@ -6,7 +6,7 @@ ExternalProject_Add(llvm
     GIT_CLONE_POST_COMMAND "sparse-checkout set --no-cone /* !*/test"
     UPDATE_COMMAND ""
     GIT_REMOTE_NAME origin
-    GIT_TAG release/18.x
+    GIT_TAG release/19.x
     LIST_SEPARATOR ,
     CONFIGURE_COMMAND ${EXEC} CONF=1 cmake -H<SOURCE_DIR>/llvm -B<BINARY_DIR>
         -G Ninja
