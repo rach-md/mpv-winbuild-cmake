@@ -31,7 +31,6 @@ ExternalProject_Add(ffmpeg
         --disable-debug
         --disable-postproc
         --disable-muxers
-        --enable-muxer=spdif
         --disable-demuxer=matroska
         --disable-devices
         --disable-bsfs
@@ -39,7 +38,7 @@ ExternalProject_Add(ffmpeg
         --disable-cuda-llvm
         --disable-d3d12va
         --disable-filters
-        --enable-filter=aresample,dynaudnorm,bwdif
+        --enable-filter=aresample,dynaudnorm
         --disable-encoders
         --enable-encoder=mjpeg,png
         --disable-decoder=aac_fixed,ac3_fixed,mp1,mp2,mp3,mp3adu,mp3on4
