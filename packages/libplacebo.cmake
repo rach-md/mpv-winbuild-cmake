@@ -3,11 +3,7 @@ get_property(src_fast_float TARGET fast_float PROPERTY _EP_SOURCE_DIR)
 ExternalProject_Add(libplacebo
     DEPENDS
         vulkan-header
-        shaderc
-        lcms2
         fast_float
-        xxhash
-        spirv-cross
     GIT_REPOSITORY https://github.com/haasn/libplacebo.git
     SOURCE_DIR ${SOURCE_LOCATION}
     GIT_CLONE_FLAGS "--filter=tree:0"
@@ -27,6 +23,10 @@ ExternalProject_Add(libplacebo
         -Ddemos=false
         -Dopengl=disabled
         -Dvulkan=disabled
+        -Dd3d11=disabled
+        -Dglslang=disabled
+        -Dshaderc=disabled
+        -Dlcms=disabled
     BUILD_COMMAND ${EXEC} ninja -C <BINARY_DIR>
     INSTALL_COMMAND ${EXEC} ninja -C <BINARY_DIR> install
     LOG_DOWNLOAD 1 LOG_UPDATE 1 LOG_CONFIGURE 1 LOG_BUILD 1 LOG_INSTALL 1

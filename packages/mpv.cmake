@@ -1,7 +1,6 @@
 ExternalProject_Add(mpv
     DEPENDS
         ffmpeg
-        lcms2
         libass
         libiconv
         luajit
@@ -26,7 +25,7 @@ ExternalProject_Add(mpv
         -Dlua=enabled
         -Djpeg=disabled
         -Duchardet=enabled
-        -Dlcms2=enabled
+        -Dlcms2=disabled
         -Ddirect3d=disabled
         -Dgl=disabled
         -Dvulkan=disabled

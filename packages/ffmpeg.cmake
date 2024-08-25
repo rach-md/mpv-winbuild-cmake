@@ -1,11 +1,7 @@
 ExternalProject_Add(ffmpeg
     DEPENDS
         zlib
-        libxml2
         dav1d
-        gmp
-        gnutls
-        libsoxr
     GIT_REPOSITORY https://github.com/FFmpeg/FFmpeg.git
     SOURCE_DIR ${SOURCE_LOCATION}
     GIT_CLONE_FLAGS "--sparse --filter=tree:0"
@@ -20,11 +16,6 @@ ExternalProject_Add(ffmpeg
         --enable-cross-compile
         --enable-runtime-cpudetect
         --enable-libdav1d
-        --enable-libxml2
-        --enable-gmp
-        --enable-gnutls
-        --enable-libsoxr
-        --enable-version3
         --disable-iconv
         --disable-doc
         --disable-programs
