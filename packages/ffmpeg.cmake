@@ -2,7 +2,7 @@ ExternalProject_Add(ffmpeg
     DEPENDS
         zlib
         dav1d
-    GIT_REPOSITORY https://github.com/FFmpeg/FFmpeg.git
+    GIT_REPOSITORY https://github.com/librempeg/librempeg.git
     SOURCE_DIR ${SOURCE_LOCATION}
     GIT_CLONE_FLAGS "--sparse --filter=tree:0"
     GIT_CLONE_POST_COMMAND "sparse-checkout set --no-cone /* !tests/ref/fate"
@@ -20,7 +20,6 @@ ExternalProject_Add(ffmpeg
         --disable-doc
         --disable-programs
         --disable-debug
-        --disable-postproc
         --disable-muxers
         --disable-demuxer=matroska
         --disable-devices
@@ -29,7 +28,7 @@ ExternalProject_Add(ffmpeg
         --disable-cuda-llvm
         --disable-d3d12va
         --disable-filters
-        --enable-filter=aresample,dynaudnorm
+        --enable-filter=ardftsrc,aresample,dynaudnorm
         --disable-encoders
         --enable-encoder=mjpeg,png
         --disable-decoder=aac_fixed,ac3_fixed,mp1,mp2,mp3,mp3adu,mp3on4
