@@ -1,10 +1,7 @@
 set(clang_version "20")
 ExternalProject_Add(llvm
-    GIT_REPOSITORY https://github.com/llvm/llvm-project.git
-    SOURCE_DIR ${SOURCE_LOCATION}
-    GIT_CLONE_FLAGS "--sparse --filter=tree:0"
-    GIT_CLONE_POST_COMMAND "sparse-checkout set --no-cone /* !*/test"
-    UPDATE_COMMAND ""
+    URL https://github.com/llvm/llvm-project/archive/refs/heads/main.zip
+    DOWNLOAD_DIR ${SOURCE_LOCATION}
     LIST_SEPARATOR ,
     CONFIGURE_COMMAND ${EXEC} CONF=1 cmake -H<SOURCE_DIR>/llvm -B<BINARY_DIR>
         -G Ninja
