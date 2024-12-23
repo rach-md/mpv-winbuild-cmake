@@ -1,6 +1,6 @@
 ExternalProject_Add(libiconv
-    URL https://ftp.gnu.org/pub/gnu/libiconv/libiconv-1.17.tar.gz
-    URL_HASH SHA256=8f74213b56238c85a50a5329f77e06198771e70dd9a739779f4c02f65d971313
+    URL https://ftp.gnu.org/pub/gnu/libiconv/libiconv-1.18.tar.gz
+    URL_HASH SHA256=3b08f5f4f9b4eb82f151a7040bfd6fe6c6fb922efe4b1659c66ea933276965e8
     DOWNLOAD_DIR ${SOURCE_LOCATION}
     CONFIGURE_COMMAND ${EXEC} CONF=1 <SOURCE_DIR>/configure
         --host=${TARGET_ARCH}
