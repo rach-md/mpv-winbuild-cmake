@@ -7,6 +7,10 @@ elseif(COMPILER_TOOLCHAIN STREQUAL "clang")
     set(mpv_lto_mode "-Db_lto_mode=thin")
     if(CLANG_PACKAGES_LTO)
         set(ffmpeg_lto "--enable-lto=thin")
+        if(GCC_ARCH_HAS_AVX)
+            set(zlib_lto "-DFNO_LTO_AVAILABLE=OFF")
+            # prevent zlib-ng from adding -fno-lto
+        endif()
     endif()
 endif()
 
